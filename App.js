@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { enableScreens } from 'react-native-screens'
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
 import MealsNavigator from './navigation/MealsNavigator';
+
+// Enables native screen elements - UIViewController, Fragment
+enableScreens();
 
 export default function App() {
   let [fontsLoaded] = useFonts({
