@@ -4,10 +4,21 @@ import { enableScreens } from 'react-native-screens'
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+
 import MealsNavigator from './navigation/MealsNavigator';
+import mealsReducer from './store/reducers/meals';
 
 // Enables native screen elements - UIViewController, Fragment
 enableScreens();
+
+/* REDUX */
+const rootReducer = combineReducers({
+  meals: mealsReducer
+});
+
+const store = createStore(rootReducer); // Passed into Provider
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,7 +30,9 @@ export default function App() {
     return <AppLoading />
   } else {
     return (
-      <MealsNavigator />
+      <Provider store={store}>
+        <MealsNavigator />
+      </Provider>
     );
   }
 }
