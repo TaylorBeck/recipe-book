@@ -23,7 +23,7 @@
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
     "react-native-web": "~0.18.10",
-    "react-navigation": "^4.3.7",
+    "react-navigation": "^5.0.0",
     "react-navigation-drawer": "^2.4.11",
     "react-navigation-header-buttons": "^3.0.5",
     "react-navigation-material-bottom-tabs": "^2.2.10",
